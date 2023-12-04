@@ -16,16 +16,17 @@ jobs:
         with:
           repository: xliuxu/Hypervisor
           ref: xnu22
-          path: './bar'
+          path: './Hypervisor'
       - name: Build
         run: |
+          cd Hypervisor
           xcodebuild archive -archivePath "Hypervisor" -scheme "Hypervisor" -sdk iphoneos -configuration Release
           tar czf Hypervisor.framework Hypervisor.xcarchive/Products/Library/Frameworks/Hypervisor.framework
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
           name: Hypervisor.framework
-          path: Hypervisor.framework
+          path: Hypervisor/Hypervisor.framework
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.debug_enabled }}
