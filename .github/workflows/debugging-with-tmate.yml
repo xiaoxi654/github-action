@@ -21,7 +21,6 @@ jobs:
         run: |
           cd Hypervisor
           xcodebuild archive -archivePath "Hypervisor" -scheme "Hypervisor" -sdk iphoneos -configuration Release
-          tar czf Hypervisor.framework.tar.gz Hypervisor.xcarchive/Products/Library/Frameworks/Hypervisor.framework
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
