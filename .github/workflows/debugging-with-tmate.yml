@@ -1,10 +1,10 @@
-name: debugging-with-tmate
+name: build XNU22 Hypervisor
 on:
   workflow_dispatch:
     inputs:
       debug_enabled:
         type: boolean
-        description: 'Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)'
+        description: Build XNU22(iOS16) Hypervisor
         required: false
         default: false
 jobs:
