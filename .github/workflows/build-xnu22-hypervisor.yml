@@ -14,8 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: xliuxu/Hypervisor
-          ref: xnu22
+          repository: utmapp/Hypervisor
           path: './Hypervisor'
       - name: Build
         run: |
